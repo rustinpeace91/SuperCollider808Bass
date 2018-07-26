@@ -9,10 +9,10 @@
 
 
 (
-// execute first, by itself
-SynthDef.new("808TrapBass", {Out.ar([0,1],
-	BLowPass.ar(
- 		LFTri.ar(freq:38, mul:Line.kr(5,-50,6).dbamp, add: 2),
+// Synth Definition (name, output ([0,1] = stereo output))
+SynthDef.new("808TrapBass", { arg freq = 32; Out.ar([0,1],
+	BLowPass.ar( 	// Low Pass Filter
+ 		LFTri.ar(freq: freq, mul:Line.kr(5,-50,6).dbamp, add: 2), 	// Triangle Wave Generator
  		freq: 1300,
  		rq: 3,
  	)
